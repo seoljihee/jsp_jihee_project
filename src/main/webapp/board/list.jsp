@@ -13,7 +13,7 @@
 
 }
 #main{height: 700px;margin:auto;}
-th{padding: 5px 40px 5px 40px;}
+th{padding: 5px 40px 5px 40px; }
 table{
 border : 1px  rgb(155, 155, 155) solid; 
 border-radius: 5px;
@@ -28,14 +28,16 @@ color:white;
 background-color:black;
 border-radius: 5px;
 }
+td{text-align:center;}
+
 </style>
 <body>
 <%
 	request.setCharacterEncoding("utf-8");
 	response.setCharacterEncoding("utf_8");
 %>
-<jsp:useBean id="dao" class="com.care.root.member.dao.MemberDAO1"/>
-<c:set var="list" value="${dao.memberView() }"/>
+<jsp:useBean id="dao" class="com.care.root.board.dao.BoardDAO"/>
+
 
 <c:import url="../default/header.jsp"/>
 <div class="wrap">
@@ -47,8 +49,16 @@ border-radius: 5px;
 				<th>조회수</th><th>idgroup</th><th>step</th><th>indent</th>
 			</tr>
 		
+		<c:forEach var="dto" items="${dao.list()}">
 			<tr>
-				<td colspan="8"><td>
+				<td>${dto.id}</td><td>${dto.name}</td><td>${dto.title}</td><td style="padding: 5px 45px 5px 45px;">${dto.savedate}</td>
+				<td>${dto.hit}</td><td>${dto.idgroup}</td><td>${dto.step}</td><td>${dto.indent}</td>
+			</tr>
+		</c:forEach>
+			<tr>
+				<td colspan="8">
+					<button type="button" onclick="location.href='${contextPath}/board/write_view.jsp'">글작성</button>
+				<td>
 			</tr>
 		
 			

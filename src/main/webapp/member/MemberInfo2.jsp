@@ -62,7 +62,7 @@ font-size:small;
 				</tr>
 				<tr>
 					<td style="padding-top: 16px;">
-					<input style="padding: 7px 95px 7px 95px; color: white; background-color: black;border-radius: 5px;" type="submit" value="수정"></td>
+					<input style="padding: 7px 95px 7px 95px; color: white; background-color: black;border-radius: 5px; margin-top:15px" type="submit" value="확인"></td>
 				</tr>
 			</table>
 		</form>
